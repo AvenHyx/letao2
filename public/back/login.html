@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
     <link rel="stylesheet" href="./css/common.css">
-    
 </head>
 <body class="body_bg">
    <!-- 有个版心 大屏占4份 其他撑满 -->
@@ -20,17 +21,17 @@
             </div>
             <div class="panel-body">
                 <!-- bootstrap 表单内容遵循一个规范 每一行都套一个form-group -->
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="form">
                         <div class="form-group">
                           <label for="username" class="col-sm-3 control-label">用户名:</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+                            <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名">
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="password" class="col-sm-3 control-label">密　码:</label>
                           <div class="col-sm-9">
-                            <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="请输入密码">
                           </div>
                         </div>
                         <div class="form-group">
@@ -47,5 +48,9 @@
   
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>  
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/commom.js"></script>
 </body>
 </html>      
