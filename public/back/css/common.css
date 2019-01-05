@@ -103,7 +103,7 @@ ul{
     padding-left: 180px;
     padding-top: 50px;
     height: 2000px;
-    background-color: pink;
+    /* background-color: pink; */
     transition: all 1s;
 }
 .lt_main .lt_topbar{
@@ -141,5 +141,5 @@ ul{
 .echarts_right{
     height: 400px;
     width: 48%;
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
