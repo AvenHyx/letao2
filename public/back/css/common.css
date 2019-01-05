@@ -12,7 +12,9 @@ ul{
     list-style: none;
 }
 
-
+.mt_20{
+    margin-top: 20px;
+}
 
 .body_bg{
     background-color: #222d32;
