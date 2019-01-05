@@ -16,7 +16,7 @@
 <!-- 左侧侧边栏 (固定定位) -->
 <div class="lt_aside">
   <div class="brand">
-    <a href="#">黑马33期牛逼</a>
+    <a href="#">黑马33期</a>
   </div>
   <div class="user">
     <img src="./images/02.jpg" alt="">
@@ -57,7 +57,7 @@
     <!-- 面包屑导航, 路径导航 -->
     <ol class="breadcrumb mt_20">
       <li><a href="index.html">管理系统</a></li>
-      <li class="active">首页</li>
+      <li class="active">用户管理</li>
     </ol>
 
     <!--
@@ -65,7 +65,29 @@
       2. data-target="#myModal" 具体切换显示哪一个模态框, 通过 id 关联
     -->
     <!--<button data-toggle="modal" data-target="#logoutModal">Launch demo modal</button>-->
-
+    <div class="lt_content">
+       <table class="table table-bordered table-hover">
+         <thead>
+           <tr>
+             <th>序号</th>
+             <th>用户名</th>
+             <th>手机号</th>
+             <th>状态</th>
+             <th>操作</th>
+           </tr>
+         </thead>
+         <tbody>
+             <!-- 模板引擎渲染 -->
+         </tbody>
+       </table>
+     <!-- 分页插件 -->
+     <!-- 3.x版本要求是ul 2.x要求是div -->
+     <div class="pull-right">
+       <ul id="paginator"></ul>
+     </div>
+       
+  
+    </div>
   </div>
 
 </div>
@@ -74,7 +96,7 @@
 <!-- 退出模态框 -->
 <!-- 外层是蒙层, 内层才是模态框主体 -->
 <!-- 给内层添加类, 可以控制大小, modal-lg 大  默认中等  modal-sm 小 -->
-<div class="modal fade" id="logoutModal" tabindex="-1">
+<div class="modal fade" id="userModal" tabindex="-1">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <!-- 头部 -->
@@ -84,24 +106,48 @@
       </div>
       <!-- 中间 -->
       <div class="modal-body">
-        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要执行此操作吗？</p>
       </div>
       <!-- 底部 -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+        <button type="button" class="btn btn-primary" id="submitBtn">确定</button>
       </div>
     </div>
   </div>
 </div>
 
 
+<!-- 准备模板引擎 -->
+<script type="text/html" id="userTpl">
+{{each rows v i}}    
+  <tr>
+    <td>{{i+1+(page-1)*size}}</td>
+    <td>{{v.username}}</td>
+    <td>{{v.mobile}}</td>
+    <td>{{v.isDelete == 1 ? "正常":"禁用"}}</td>
+    <td data-id = "{{v.id}}">
+        {{if v.isDelete == 1}}
+            <button class="btn btn-danger">禁用</button>
+        {{else}}
+            <button class="btn btn-success">启用</button>
+        {{/if}}
+      </button>
+    </td>
+  </tr>
+{{/each}}
+</script>
+
+
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/commom.js"></script>
 <script src="./js/isLogin.js"></script>
+<script src="./js/user.js"></script>
 
 </body>
 </html>
