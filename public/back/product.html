@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
+  <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+
+
+<!-- 左侧侧边栏 (固定定位) -->
+<div class="lt_aside">
+  <div class="brand">
+    <a href="#">黑马33期牛逼</a>
+  </div>
+  <div class="user">
+    <img src="./images/02.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  <div class="nav">
+    <ul>
+      <li><a class="current" href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+      <li>
+        <a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+        <!-- 二级导航 -->
+        <div class="child">
+          <a href="first.html">一级分类</a>
+          <a href="second.html">二级分类</a>
+        </div>
+      </li>
+      <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- 右侧主体部分 -->
+<div class="lt_main">
+
+  <div class="lt_topbar">
+    <a href="#" class="pull-left icon_menu">
+      <i class="glyphicon glyphicon-align-justify"></i>
+    </a>
+    <a href="#" class="pull-right icon_logout">
+      <i class="glyphicon glyphicon-log-out"></i>
+    </a>
+  </div>
+
+  <!-- 底部内容部分, 流式布局容器 container-fluid  宽度100% 默认左右15px padding -->
+  <div class="container-fluid">
+
+    <!-- 面包屑导航, 路径导航 -->
+    <ol class="breadcrumb mt_20">
+      <li><a href="index.html">管理系统</a></li>
+      <li class="active">首页</li>
+    </ol>
+
+    <!--
+      1. data-toggle="modal" 切换显示模态框
+      2. data-target="#myModal" 具体切换显示哪一个模态框, 通过 id 关联
+    -->
+    <!--<button data-toggle="modal" data-target="#logoutModal">Launch demo modal</button>-->
+
+  </div>
+
+</div>
+
+
+<!-- 退出模态框 -->
+<!-- 外层是蒙层, 内层才是模态框主体 -->
+<!-- 给内层添加类, 可以控制大小, modal-lg 大  默认中等  modal-sm 小 -->
+<div class="modal fade" id="logoutModal" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <!-- 头部 -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+      </div>
+      <!-- 中间 -->
+      <div class="modal-body">
+        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+      </div>
+      <!-- 底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./js/commom.js"></script>
+<script src="./js/isLogin.js"></script>
+
+</body>
+</html>

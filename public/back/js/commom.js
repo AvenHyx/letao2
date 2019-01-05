@@ -21,6 +21,10 @@
 // .ajaxStart()      第一个ajax发送时, 调用   (开启进度条)
 // .ajaxStop()       当所有的ajax都完成时, 调用  (结束进度条)
 
+//配置禁用小圆点
+NProgress.configure({ showSpinner: false });
+
+
 $(document).ajaxStart(function(){
     NProgress.start()
 })
@@ -33,4 +37,66 @@ $(document).ajaxStop(function(){
     NProgress.done()
     
 })
+
+
+
+
+//入口函数，等待当前的dom结构加载完毕后 再执行
+$(function(){
+//公共的功能
+//1，左侧二级菜单切换功能
+$(".lt_aside .category").click(function(){
+    $(this).next().stop().slideToggle();
+})
+//2.左侧侧边栏切换功能
+$(".icon_menu").click(function(){
+    $(".lt_aside").toggleClass("hidemenu");
+    $(".lt_topbar").toggleClass("hidemenu");
+    $(".lt_main").toggleClass("hidemenu");
+})
+
+//3.退出功能
+//点击按钮实现退出，显示模态框，  
+$(".icon_logout").click(function(){
+    //让模态框显示， 隐藏
+    $("#logoutModal").modal("show");
+})  
+
+//点击退出按钮 发送退出请求，实现退出
+$("#logoutBtn").click(function(){
+    //发送ajax请求， 来退出
+    $.ajax({
+        type:"get",
+        url:"/employee/employeeLogout",
+        dataType:"json",
+        success:function(info){
+            if(info.success){
+                location.href = "login.html"
+            }
+        }
+     })
+   })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
 
