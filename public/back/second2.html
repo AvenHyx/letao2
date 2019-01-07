@@ -153,7 +153,7 @@
             <td>{{v.categoryName}}</td>
             <td>{{v.brandName}}</td>
             <td>
-                <img src="{{v.brandLogo}}" alt=""height ="50px" >
+                <img src="{{v.brandLogo ? v.brandLogo : 'images/02.jpg'}}" alt=""height ="50px" >
             </td>
         </tr>
 {{/each}}
