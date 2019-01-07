@@ -72,14 +72,14 @@
        <table class="table table-bordered table-hover mt_20">
          <thead>
            <tr>
-             <th width="10%">序号</th>
-             <th width="30%">一级分类</th>
-             <th width="30%">二级分类</th>
-             <th width="30%">二级分类LOGO</th>
+             <th style="width:10%">序号</th>
+             <th style="width:30%">一级分类名称</th>
+             <th style="width:30%">一级分类名称</th>
+             <th style="width:30%">一级分类LOGO</th>
            </tr>
          </thead>
          <tbody>
-             <!-- 模板引擎渲染 -->
+              <!-- 模板引擎渲染 -->
          </tbody>
        </table>
      <!-- 分页插件 -->
@@ -110,35 +110,34 @@
             <!-- 中间 -->
             <div class="modal-body">
               <div class="form-group">
-                  <div class="dropdown">
-                      <button class="btn btn-default dropdown-toggle" type="button"  data-toggle="dropdown" >
-                        <span id="dropdownText">
-                          请选择一级分类</span>   
-                        <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu">
-                          <!-- 模板引擎渲染 -->
-                      </ul>
-                  </div>
-                  <input type="hidden" name="categoryId">
+                    <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" >
+                               <span class="cate">请选择一级分类</span>
+                               <input type="hidden" name="categoryId">
+                               <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" >
+                                  <!-- 引入模板引擎 -->
+                            </ul>
+                    </div>
+                    <input type="hidden" name="categoryId">
               </div>
               <div class="form-group">
                   <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
               </div>
               <div class="form-group">
-                 <label for="fileupload"class="btn btn-default">上传图片</label>
-                 <input type="file" id="fileupload" style="display:none" name="pic1" data-url = "/category/addSecondCategoryPic">
+                  <label for="fileupload" class="btn btn-default">上传图片</label>
+                  <input type="file" id="fileupload" name = "pic1" data-url="/category/addSecondCategoryPic" style="display:none"  multiple>
               </div>
               <div class="form-group" id="imgBox">
-                 <img style = "width:100px;margin-bottom: 20px" src="./images/02.jpg" class="mt_20">
-                 <!-- 图片地址 -->
-                 <input type="hidden" name="brandLogo">
+                  <img src="./images/02.jpg" alt="" style="width:100px" >
+                  <input type="hidden" name = "brandLogo">
               </div>
             </div>
             <!-- 底部 -->
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-              <button type="submit" class="btn btn-primary" form = "form" >添加</button>
+              <button type="submit" class="btn btn-primary" >添加</button>
           </div>
        </form>    
     </div>
@@ -147,40 +146,42 @@
 
 
 <!-- 准备模板引擎 -->
-<script type="text/html" id="secondTpl">
+<script type="text/html" id = "secondTpl">
 {{each rows v i}}
-  <tr>
-    <td>{{i+1+(page-1)*size}}</td>
-    <td>{{v.categoryName}}</td>
-    <td>{{v.brandName}}</td>
-    <td>
-      <img src="{{v.brandLogo ? v.brandLogo : 'images/02.jpg'}}" style ="height:50px">
-    </td>
-  </tr>
+    <tr>
+            <td>{{i+1+(page-1)*size}}</td>
+            <td>{{v.categoryName}}</td>
+            <td>{{v.brandName}}</td>
+            <td>
+                <img src="{{v.brandLogo}}" alt=""height ="50px" >
+            </td>
+        </tr>
 {{/each}}
 
 </script>
 
-<!--下拉框模板引擎渲染 -->
-<script type="text/html" id="dropdownTpl">
- {{each rows v i}}
-  <li><a href="#" data-id = "{{v.id}}">{{v.categoryName}}</a></li>
- {{/each}}
-</script>
+<!-- 分类菜单模板引擎渲染 -->
+<script type="text/html" id="cateTpl">
+ {{each rows v i }}
+    <li><a href="#" data-id = "{{v.id}}">{{v.categoryName}}</a></li>
+{{/each}}
 
+</script>
 
 <script src="./lib/jquery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
-<script src="./lib/jquery-fileupload/jquery.iframe-transport.js"></script>
-<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./lib/nprogress/nprogress.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!-- 表单上传的插件引包 -->
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+
+
 <script src="./js/commom.js"></script>
 <script src="./js/isLogin.js"></script>
-<script src="./js/second.js"></script>
+<script src="./js/second2.js"></script>
 
 </body>
 </html>
