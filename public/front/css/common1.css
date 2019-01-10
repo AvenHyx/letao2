@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.lt_container {
+    height: 100%;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    background-color: orange;
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 55px;
+    margin: 0 auto;
+}
+.lt_container .lt_header{
+    height: 45px;
+    background-color: #006699;
+    max-width: 640px;
+    min-width: 320px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 45px;
+}
+.lt_header .icon_left,
+.lt_header .icon_right{
+    position: absolute;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    display: block;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+}
+.lt_header .icon_left{
+    left: 0;
+}
+.lt_header .icon_right{
+    right: 0;
+}
+.lt_header h3{
+   text-align: center;
+   font-weight: normal;
+   font-size: 20px;
+   color: #fff;
+   margin: 0;
+   line-height: 45px;
+}
+
+
+/* 底部区域 */
+.lt_footer{
+    height: 55px;
+    width: 100%;
+    background-color: #006699;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.lt_footer li{
+   float: left;
+    width: 25%;
+    text-align: center;
+}
+.lt_footer li a{
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding-top: 8px;
+}
+.lt_footer li a p{
+    color: #fff;
+}
+/* 中间区域 */
+.lt_main{
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+}

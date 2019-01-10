@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+  <button id="btn">点我触发input</button>
+  <br>
+  <input type="file" id="ipt">
+   <script src="./back/lib/jquery/jquery.min.js"></script>
+ <script>
+ 
+  $(document).ready(function(){
+      $("#ipt").click(function(){
+          console.log("控件已生效")
+      })
+      $("#btn").click(function(){
+          $("#ipt").trigger("click")
+      })
+  })
+  
+
+ </script>
+</body>
+</html>
