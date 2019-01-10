@@ -44,22 +44,7 @@
                  </div>
                  <!-- 历史纪录 -->
                  <div class="lt_history">
-                     <div class="title">
-                         <span class="mui-pull-left">搜索历史</span>
-                         <span class="mui-pull-right btn_empty"><i class="fa fa-trash">清空记录</i></span>
-                     </div>
-                     <div class="content">
-                         <ul>
-                             <li>
-                                 <a href="#" class="mui-pull-left">星星</a>
-                                 <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
-                             </li>
-                             <li>
-                                <a href="#" class="mui-pull-left">星星</a>
-                                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
-                            </li>
-                         </ul>
-                     </div>
+                       <!-- 模板引擎渲染title 和content -->
                  </div>
              </div>
            </div>
@@ -94,17 +79,36 @@
          </div>
        </div>
       
+    <script type="text/html"  id="searchTpl">
+     {{if arr.length === 0}}
+         <p class = "tips">亲， 没有更多数据啦</p>
+     {{else}}
+      <div class="title">
+        <span class="mui-pull-left">搜索历史</span>
+        <span class="mui-pull-right btn_empty"><i class="fa fa-trash">清空记录</i></span>
+    </div>
+  
+    <div class="content">
+        <ul>
+          {{each arr v i}}
+            <li>
+                <a href="#" class="mui-pull-left">{{v}}</a>
+                <i data-index = "{{i}} " class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+            </li>
+          {{/each}}
+        </ul>
+    </div>
+    {{/if}}        
     
-       <script src="./lib/mui/js/mui.js"></script>
-       <script src="./js/commom.js"></script>
+  
+    
+    </script>  
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/commom.js"></script>
+    <script src="./js/search.js"></script> 
     </body>
     </html>
 
-   <script src="./lib/mui/js/mui.js"></script>
-   <script src="./lib/zepto/zepto.min.js"></script>
-   <script src="./lib/artTemplate/template-web.js"></script>
-   <script src="./js/commom.js"></script>
-   <script src="./js/search.js"></script>
-
-</body>
-</html>
+ 
